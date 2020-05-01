@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('=================== task-1 ======================');
+
 const user = {
   name: 'Mango',
   age: 20,

@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('=================== task-2 ======================');
+
 const countProps = function (obj) {
   const keys = Object.keys(obj);
   console.log(keys.length);
