@@ -18,12 +18,6 @@ const account = {
 
   deposit(amount) {
     this.balance += Number(amount);
-    this.TransactionID += Number(amount);
-    transaction = {
-      type: Transaction.DEPOSIT,
-      amount: amount,
-      id: this.TransactionID,
-    };
     this.addTransaction(transaction);
   },
 
@@ -34,14 +28,18 @@ const account = {
       );
     } else {
       this.balance -= Number(amount);
-      this.TransactionID += Number(amount);
-      transaction = {
-        type: Transaction.WITHDRAW,
-        amount: amount,
-        id: this.TransactionID,
-      };
       this.addTransaction(transaction);
     }
+  },
+
+  createTransaction(amount, type) {
+    this.TransactionID += Number(amount);
+    transaction = {
+      type: Transaction.WITHDRAW,
+      amount: amount,
+      id: this.TransactionID,
+    };
+    return transaction;
   },
 
   addTransaction(transaction) {
